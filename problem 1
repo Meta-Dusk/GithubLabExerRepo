@@ -1,0 +1,35 @@
+def mean(nums):
+    return sum(nums) / len(nums)
+
+def median(nums):
+    nums.sort()
+    n = len(nums)
+    if n % 2 == 0:
+        return (nums[n // 2] + nums[(n // 2) - 1]) / 2
+    else:
+        return nums[n // 2]
+
+def mode(nums):
+    freq = {}
+    for num in nums:
+        if num in freq:
+            freq[num] += 1
+        else:
+            freq[num] = 1
+
+    max_count = max(freq.values())
+    modes = [k for k, v in freq.items() if v == max_count]
+
+    if len(modes) == 1:
+        return modes[0]
+    else:
+        return modes
+
+
+data = input("Enter numbers (use space): ")
+numbers = list(map(float, data.split()))
+
+print("\n--- Results ---")
+print("Mean  :", round(mean(numbers), 2))
+print("Median:", round(median(numbers), 2))
+print("Mode  :", mode(numbers))
