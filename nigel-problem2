@@ -1,0 +1,32 @@
+def main():
+ 
+    file_name = input("Type the file name: ")
+
+    try:
+       
+        file = open(file_name, "r")
+        lines = file.readlines()
+        file.close()
+
+        
+        for i in range(len(lines)):
+            lines[i] = lines[i].strip()
+
+        while True:
+            print("\nLines in file:", len(lines))
+            try:
+                num = int(input("Pick a line number (0 to exit): "))
+                if num == 0:
+                    print("Done. Thanks!")
+                    break
+                elif num > 0 and num <= len(lines):
+                    print("Line", num, ":", lines[num - 1])
+                else:
+                    print("Invalid number.")
+            except:
+                print("Enter a number only.")
+
+    except:
+        print("Can't open file. Maybe wrong name?")
+
+main()
