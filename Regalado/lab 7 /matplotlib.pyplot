@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+
+# x and y axis values
+x = [1, 2, 3, 4, 5]
+y = [10, 5, 8, 4, 2]
+
+# plot the line
+plt.plot(x, y)
+
+# add a title
+plt.title("My First Plot")
+
+# label the axes
+plt.xlabel("x axis")
+plt.ylabel("y axis")
+
+# show the graph
+plt.show()
